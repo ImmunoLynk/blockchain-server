@@ -4,7 +4,6 @@ This is a simple but effective implementation of a peer-to-peer descentralized t
 
 App users can opt to donate their processed data to a public IPFS node so healthcare researchers can employ it on COVID-focused solutions.
 
-<img src="designs/cover.jpg" align="center" />
 
 ## Immuno Lynk backend (server)
 
