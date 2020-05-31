@@ -1,15 +1,14 @@
-# ImmunoLynk: COVID19 Immunity Testing Results on the Blockchain
-Lumiata COVID-19 Global AI [Hackathon](https://www.lumiata.com/lumiata-covid-19-global-ai-hackathon/) Winner!
+# COVID19 Anonymized Immunity Testing Results on public IPFS
 
-This is a simple but effective implementation of a blockchain-based descentralized test results validator.
+This is a simple but effective implementation of a peer-to-peer descentralized test results validator.
 
-The project is divided into the sections bellow.
+App users can opt to donate their processed data to a public IPFS node so healthcare researchers can employ it on COVID-focused solutions.
 
 <img src="designs/cover.jpg" align="center" />
 
 ## Immuno Lynk backend (server)
 
-Server built on Flask using an HTTP API. All requests are handled then sent to an IPFS Blockchain instance running on AWS EC2. Infura's [API](https://infura.io/docs) was used to connect to a public IPFS node and register the data permanently or temporarily (depends on the PIN variable in server.py).
+Server built on Flask using an HTTP API. All requests are handled then sent to an IPFS node instance running on AWS EC2. Infura's [API](https://infura.io/docs) was used to connect to a public IPFS node and register the data permanently or temporarily (depends on the PIN variable in server.py).
 
 For production, a private node implementation example is providade in the /private_ipfs_node folder, courtesy of [dfile.app](dfile.app).
 
@@ -56,15 +55,6 @@ Response:
 }
 ```
 
-## Immuno Lynk frontend (app)
-
-App built using React components through [expo.io](expo.io) that reads QR Code, automatically takes a snapshot of the test and send's to backend server.
-
-We also have an analytical [dashboard webapp](https://github.com/lon-io/immunolynk-dashboard).
-
-Code is available at [Excellence Ilesamni's repo](https://github.com/lon-io/immunolynk-app).
-
-
 ## Result recognition network (Deep Learning Model)
 
 Model built using Keras and OpenCV2 to detect stripes on the image and determine the test results automatically from the uploaded and processes image.
@@ -73,6 +63,3 @@ Full code found in [Veeresh Shringar's repo](https://github.com/VeereshShringari
 
 A very simple legacy implementation done at the MIT Hackathon is located at result_recognition_old/, though it's not used anymore.
 
-## Blockchain database alternative
-
-Since images are uploaded in a two-part process (image uploaded as multiform then image data uploadaded as raw json), a more cost effective alternative was also tested using BigchainDB to store the metadata.
